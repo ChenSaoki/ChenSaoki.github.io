@@ -54,13 +54,75 @@
     
     
     <entry>
-      <title>Hello World</title>
-      <link href="/2019/09/23/hello-world/"/>
-      <url>/2019/09/23/hello-world/</url>
+      <title>洛谷 P1056 排座椅</title>
+      <link href="/2019/02/22/%E6%B4%9B%E8%B0%B7-P1056-%E6%8E%92%E5%BA%A7%E6%A4%85/"/>
+      <url>/2019/02/22/%E6%B4%9B%E8%B0%B7-P1056-%E6%8E%92%E5%BA%A7%E6%A4%85/</url>
       
-        <content type="html"><![CDATA[<p>Welcome to <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>.</p><h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><pre><code class="bash">$ hexo new &quot;My New Post&quot;</code></pre><p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="noopener">Writing</a></p><h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><pre><code class="bash">$ hexo server</code></pre><p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="noopener">Server</a></p><h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><pre><code class="bash">$ hexo generate</code></pre><p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="noopener">Generating</a></p><h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><pre><code class="bash">$ hexo deploy</code></pre><p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="noopener">Deployment</a></p>]]></content>
+        <content type="html"><![CDATA[<h2 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a>题目描述</h2><p>上课的时候总会有一些同学和前后左右的人交头接耳，这是令小学班主任十分头疼的一件事情。不过，班主任小雪发现了一些有趣的现象，当同学们的座次确定下来之后，只有有限的D对同学上课时会交头接耳。</p><p>同学们在教室中坐成了 MM 行 NN 列，坐在第i行第j列的同学的位置是 (i,j)(i,j) ，为了方便同学们进出，在教室中设置了 KK 条横向的通道， LL 条纵向的通道。</p><p>于是，聪明的小雪想到了一个办法，或许可以减少上课时学生交头接耳的问题：她打算重新摆放桌椅，改变同学们桌椅间通道的位置，因为如果一条通道隔开了 22 个会交头接耳的同学，那么他们就不会交头接耳了。</p><p>请你帮忙给小雪编写一个程序，给出最好的通道划分方案。在该方案下，上课时交头接耳的学生的对数最少。</p><hr><h2 id="输入格式："><a href="#输入格式：" class="headerlink" title="输入格式："></a>输入格式：</h2><pre><code>第一行，有 55 个用空格隔开的整数，分别是 M,N,K,L,D(2 \le N,M \le 1000,0 \le K&lt;M,0 \le L&lt;N,D \le 2000)M,N,K,L,D(2≤N,M≤1000,0≤K&lt;M,0≤L&lt;N,D≤2000)接下来的 DD 行，每行有 44 个用空格隔开的整数。第 ii 行的 44 个整数 X_i,Y_i,P_i,Q_iXi​,Yi​,Pi​,Qi​ ，表示坐在位置 (X_i,Y_i)(Xi​,Yi​) 与 (P_i,Q_i)(Pi​,Qi​) 的两个同学会交头接耳（输入保证他们前后相邻或者左右相邻）。输入数据保证最优方案的唯一性。</code></pre><br>## 输出格式：<h3 id="共两行。"><a href="#共两行。" class="headerlink" title="共两行。"></a>共两行。</h3><pre><code>第一行包含 KK 个整数 a_1,a_2,…,a_Ka1​,a2​,…,aK​ ，表示第 a_1a1​ 行和 a_1+1a1​+1 行之间、第 a-2a−2 行和 a_2+1a2​+1 行之间、…、第 a_KaK​ 行和第 a_K+1aK​+1 行之间要开辟通道，其中 a_i&lt; a_i+1ai​&lt;ai​+1 ，每两个整数之间用空格隔开（行尾没有空格）。第二行包含 LL 个整数 b_1,b_2,…,b_Lb1​,b2​,…,bL​ ，表示第 b_1b1​ 列和 b_1+1b1​+1 列之间、第 b_2b2​ 列和 b_2+1b2​+1 列之间、…、第 b_LbL​ 列和第 b_L+1bL​+1 列之间要开辟通道，其中 b_i&lt; b_i+1bi​&lt;bi​+1 ，每两个整数之间用空格隔开（列尾没有空格）。</code></pre><hr><h3 id="输入样例-1："><a href="#输入样例-1：" class="headerlink" title="输入样例#1："></a>输入样例#1：</h3><pre><code>4 5 1 2 34 2 4 32 3 3 32 5 2 4</code></pre><h3 id="输出样例-1："><a href="#输出样例-1：" class="headerlink" title="输出样例#1："></a>输出样例#1：</h3><pre><code>22 4</code></pre><br>***## 思路：用结构体记录每行每列都可以分隔多少组同学，排序取分隔最多的就是最优解<hr><h1 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h1><pre><code class="c#">#include &lt;iostream&gt;#include &lt;algorithm&gt;using namespace std;typedef struct node{    int index;                        //记录行或列的序号     int v=0;                        //记录行或列可以分隔组数 };int cmp1(node a,node b){    return a.v&gt;b.v?1:0;}int cmp2(node a,node b){    return a.index&lt;b.index?1:0;}int main(){    int m,n,k,l,d,x,y,p,q;cin&gt;&gt;m&gt;&gt;n&gt;&gt;k&gt;&gt;l&gt;&gt;d;    node hang[m+10],lie[n+10];    for(int i=0;i&lt;=m;i++)hang[i].index=i;                //初始化行列序号     for(int i=0;i&lt;=n;i++)lie[i].index=i;    for(int i=0;i&lt;d;i++)    {        cin&gt;&gt;x&gt;&gt;y&gt;&gt;p&gt;&gt;q;        if(y==q) x&gt;p?hang[p].v++:hang[x].v++;            //记录数据可以被那一行或列分隔         else y&gt;q?lie[q].v++:lie[y].v++;    }    sort(hang+1,hang+m,cmp1);                //降序排序，取得最优解     sort(lie+1,lie+n,cmp1);    sort(hang+1,hang+k+1,cmp2);                //因为要按升序输出，所以要对序号进行排序     sort(lie+1,lie+l+1,cmp2);    for(int i=1;i&lt;=k;i++)    {        cout&lt;&lt;hang[i].index;        if(i!=k)cout&lt;&lt;&quot; &quot;;    }    cout&lt;&lt;endl;    for(int i=1;i&lt;=l;i++)    {        cout&lt;&lt;lie[i].index;        if(i!=l)cout&lt;&lt;&quot; &quot;;    }    cout&lt;&lt;endl;    return 0;}</code></pre>]]></content>
       
       
+      <categories>
+          
+          <category> 算法 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 题解 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>L2-022 重排链表 （25 分）天梯</title>
+      <link href="/2019/02/19/L2-022-%E9%87%8D%E6%8E%92%E9%93%BE%E8%A1%A8-%EF%BC%8825-%E5%88%86%EF%BC%89%E5%A4%A9%E6%A2%AF/"/>
+      <url>/2019/02/19/L2-022-%E9%87%8D%E6%8E%92%E9%93%BE%E8%A1%A8-%EF%BC%8825-%E5%88%86%EF%BC%89%E5%A4%A9%E6%A2%AF/</url>
+      
+        <content type="html"><![CDATA[<h2 id="L2-022-重排链表-（25-分）"><a href="#L2-022-重排链表-（25-分）" class="headerlink" title="L2-022 重排链表 （25 分）"></a>L2-022 重排链表 （25 分）</h2><p>给定一个单链表 L​1​​→L​2​​→⋯→L​n−1​​→L​n​​，请编写程序将链表重新排列为 L​n​​→L​1​​→L​n−1​​→L​2​​→⋯。例如：给定L为1→2→3→4→5→6，则输出应该为6→1→5→2→4→3。</p><p>输入格式：<br>每个输入包含1个测试用例。每个测试用例第1行给出第1个结点的地址和结点总个数，即正整数N (≤10​5​​)。结点的地址是5位非负整数，NULL地址用−1表示。</p><p>接下来有N行，每行格式为：</p><p>Address Data Next<br>其中Address是结点地址；Data是该结点保存的数据，为不超过10​5​​的正整数；Next是下一结点的地址。题目保证给出的链表上至少有两个结点。</p><hr><h2 id="输出格式："><a href="#输出格式：" class="headerlink" title="输出格式："></a>输出格式：</h2><p>对每个测试用例，顺序输出重排后的结果链表，其上每个结点占一行，格式与输入相同。</p><hr><h3 id="输入样例："><a href="#输入样例：" class="headerlink" title="输入样例："></a>输入样例：</h3><pre><code>00100 600000 4 9999900100 1 1230968237 6 -133218 3 0000099999 5 6823712309 2 33218</code></pre><h3 id="输出样例："><a href="#输出样例：" class="headerlink" title="输出样例："></a>输出样例：</h3><pre><code>68237 6 0010000100 1 9999999999 5 1230912309 2 0000000000 4 3321833218 3 -1</code></pre><hr><h2 id="题解："><a href="#题解：" class="headerlink" title="题解："></a>题解：</h2><p>读入-&gt;排序-&gt;模拟</p><p>需要注意的是数据比较坑（第4个点），可能存在不再一个链表上的两个结点，所有需要记录一下链表长度。</p><hr><h2 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h2><pre><code class="c#">#include &lt;iostream&gt;#include &lt;map&gt;using namespace std;struct node{    string address;    int data;    string next;}a[100010],s,tmp;map&lt;string,node&gt; mp;int main(){    cin&gt;&gt;s.address&gt;&gt;s.data;    for(int i=0;i&lt;s.data;i++)    {        cin&gt;&gt;tmp.address&gt;&gt;tmp.data&gt;&gt;tmp.next;        mp[tmp.address]=tmp;    }    int len=0;    for(int i=0;i&lt;s.data;i++)    {        len++;        a[i]=mp[s.address];        s.address=a[i].next;        if(s.address==&quot;-1&quot;)break;    }    int count=1;    for(int i=0;i&lt;(len+1)/2;i++)    {        if(count%2==1)        {            cout&lt;&lt;a[len-i-1].address&lt;&lt;&quot; &quot;&lt;&lt;a[len-i-1].data&lt;&lt;&quot; &quot;;            if(count!=len)            {                cout&lt;&lt;a[i].address&lt;&lt;endl;            }            else            {                cout&lt;&lt;-1&lt;&lt;endl;                break;            }            count++;        }        if(count%2==0)        {            cout&lt;&lt;a[i].address&lt;&lt;&quot; &quot;&lt;&lt;a[i].data&lt;&lt;&quot; &quot;;            if(count!=len)            {                cout&lt;&lt;a[len-i-2].address&lt;&lt;endl;            }            else            {                cout&lt;&lt;-1&lt;&lt;endl;                break;            }            count++;        }    }    return 0;}</code></pre>]]></content>
+      
+      
+      <categories>
+          
+          <category> 算法 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 题解 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>洛谷 P1032 字串变换</title>
+      <link href="/2019/01/28/%E6%B4%9B%E8%B0%B7-P1032-%E5%AD%97%E4%B8%B2%E5%8F%98%E6%8D%A2/"/>
+      <url>/2019/01/28/%E6%B4%9B%E8%B0%B7-P1032-%E5%AD%97%E4%B8%B2%E5%8F%98%E6%8D%A2/</url>
+      
+        <content type="html"><![CDATA[<h2 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a>题目描述</h2><p>已知有两个字串A,BA,B及一组字串变换的规则（至多66个规则）:</p><p>A_1A1​ -&gt;B_1B1​</p><p>A_2A2​ -&gt; B_2B2​</p><p>规则的含义为：在 AA中的子串 A_1A1​ 可以变换为B_1B1​，A_2A2​ 可以变换为 B_2B2​ …。</p><p>例如：AA=’abcdabcd’BB＝’xyzxyz’</p><p>变换规则为：</p><p>‘abcabc’-&gt;‘xuxu’‘udud’-&gt;‘yy’‘yy’-&gt;‘yzyz’</p><p>则此时，AA可以经过一系列的变换变为BB，其变换的过程为：</p><p>‘abcdabcd’-&gt;‘xudxud’-&gt;‘xyxy’-&gt;‘xyzxyz’</p><p>共进行了33次变换，使得AA变换为BB。</p><hr><h2 id="输入格式："><a href="#输入格式：" class="headerlink" title="输入格式："></a>输入格式：</h2><pre><code>AA BBA_1A1​ B_1B1​A_2A2​ B_2B2​ |-&gt; 变换规则... ... /所有字符串长度的上限为2020。</code></pre><hr><h2 id="输出格式："><a href="#输出格式：" class="headerlink" title="输出格式："></a>输出格式：</h2><h3 id="若在1010步（包含1010步）以内能将AA变换为BB，则输出最少的变换步数；否则输出”NO-ANSWER-”"><a href="#若在1010步（包含1010步）以内能将AA变换为BB，则输出最少的变换步数；否则输出”NO-ANSWER-”" class="headerlink" title="若在1010步（包含1010步）以内能将AA变换为BB，则输出最少的变换步数；否则输出”NO ANSWER!”"></a>若在1010步（包含1010步）以内能将AA变换为BB，则输出最少的变换步数；否则输出”NO ANSWER!”</h3><h2 id="输入输出样例"><a href="#输入输出样例" class="headerlink" title="输入输出样例"></a>输入输出样例</h2><h3 id="输入样例-1："><a href="#输入样例-1：" class="headerlink" title="输入样例#1："></a>输入样例#1：</h3><pre><code>abcd xyzabc xuud yy yz</code></pre><h3 id="输出样例-1："><a href="#输出样例-1：" class="headerlink" title="输出样例#1："></a>输出样例#1：</h3><pre><code>3</code></pre><hr><h2 id="思路："><a href="#思路：" class="headerlink" title="思路："></a>思路：</h2><p>###直接用广度优先搜索(BFS)来做，加上用set来判重，具体看代码</p><hr><h2 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h2><pre><code class="c#">#include &lt;iostream&gt;#include &lt;set&gt;#include &lt;queue&gt;#include &lt;cstring&gt;using namespace std;string a,b,s[10],e[10]; int x=1,p=1;//x:记录变化规则数量  p:特判 struct node{    string a;//字符串     int sum;//已经变化次数 };queue&lt;node&gt; que;set&lt;string&gt; mark;//用来判重，否则会TLE在第3点和第5点void bfs()//重点{    if(a==b)    {        cout&lt;&lt;&quot;0&quot;&lt;&lt;endl;        return;    }    node t={a,0};    que.push(t);    mark.insert(a);    while(!que.empty())    {        node front=que.front();        que.pop();        if(front.sum&gt;20)        {            cout&lt;&lt;&quot;NO ANSWER!&quot;&lt;&lt;endl;            p=0;            return;        }        for(int i=1;i&lt;=x;i++)        {                int v=0;            //找出所有符合字符串入队             while(1)                                        {                //找出符合条件的位置                 v=front.a.find(s[i],v);                //判断是否找到符合的条件 string::npos==-1                 if(v!=string::npos)                {                    //合并新串                     string newstr=front.a.substr(0,v)+e[i]+front.a.substr(v+strlen(s[i].c_str()));                    //根据题目字符串最长20                     if(strlen(newstr.c_str())&gt;20){v++;continue;}                    //相等直接输出结果                     if(newstr==b)                    {                        cout&lt;&lt;front.sum+1&lt;&lt;endl;                        p=0;                        return;                    }                    //判重，重复的串不再入队                     if(mark.find(newstr)==mark.end())                    {                        mark.insert(newstr);                        node newnode={newstr,front.sum+1};                        que.push(newnode);                    }                    //从下一个位置开始找                     v++;                }                else                {                    break;                }            }        }    }    //还有一种情况：变化次数少于20且没有正确答案    if(p)cout&lt;&lt;&quot;NO ANSWER!&quot;&lt;&lt;endl;    return;}int main(){    cin&gt;&gt;a&gt;&gt;b;    while(cin&gt;&gt;s[x]&gt;&gt;e[x])x++;    bfs();    return 0;}</code></pre>]]></content>
+      
+      
+      <categories>
+          
+          <category> 算法 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 题解 </tag>
+            
+        </tags>
       
     </entry>
     

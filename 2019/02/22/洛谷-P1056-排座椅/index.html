@@ -46,7 +46,7 @@
     
     <title>
         
-            categories | 
+            洛谷 P1056 排座椅 | 
         
         Saoki&#39;s Blog
     </title>
@@ -57,7 +57,7 @@
 
     <meta name="format-detection" content="telephone=no">
     <meta name="description" itemprop="description" content>
-    <meta name="keywords" content>
+    <meta name="keywords" content=",题解">
     <meta name="theme-color" content="#0097A7">
 
     <!-- Disable Fucking Bloody Baidu Tranformation -->
@@ -218,7 +218,7 @@
     <!-- WebAPP Icons -->
     <meta name="mobile-web-app-capable" content="yes">
     <meta name="application-name" content="Saoki&#39;s Blog">
-    <meta name="msapplication-starturl" content="https://chensaoki.github.io/categories/">
+    <meta name="msapplication-starturl" content="https://chensaoki.github.io/2019/02/22/洛谷-P1056-排座椅/">
     <meta name="msapplication-navbutton-color" content="#0097A7">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-title" content="Saoki&#39;s Blog">
@@ -233,13 +233,16 @@
     
 
     <!-- The Open Graph protocol -->
-    <meta property="og:url" content="https://chensaoki.github.io/categories/">
+    <meta property="og:url" content="https://chensaoki.github.io/2019/02/22/洛谷-P1056-排座椅/">
     <meta property="og:type" content="blog">
-    <meta property="og:title" content="categories | Saoki&#39;s Blog">
+    <meta property="og:title" content="洛谷 P1056 排座椅 | Saoki&#39;s Blog">
     <meta property="og:image" content="/img/favicon.png">
     <meta property="og:description" content>
-    
+    <meta property="og:article:tag" content="题解"> 
 
+    
+        <meta property="article:published_time" content="Fri Feb 22 2019 19:02:47 GMT+0800">
+        <meta property="article:modified_time" content="Sat Sep 28 2019 23:58:59 GMT+0800">
     
 
     <!-- The Twitter Card protocol -->
@@ -247,13 +250,43 @@
 
     <!-- Add canonical link for SEO -->
     
-        <link rel="canonical" href="https://chensaoki.github.io/categories/index.html">
+        <link rel="canonical" href="https://chensaoki.github.io/2019/02/22/洛谷-P1056-排座椅/index.html">
     
 
     <!-- Structured-data for SEO -->
     
         
 
+
+<script type="application/ld+json">
+{
+    "@context": "https://schema.org",
+    "@type": "BlogPosting",
+    "mainEntityOfPage": "https://chensaoki.github.io/2019/02/22/洛谷-P1056-排座椅/index.html",
+    "headline": "洛谷 P1056 排座椅",
+    "datePublished": "Fri Feb 22 2019 19:02:47 GMT+0800",
+    "dateModified": "Sat Sep 28 2019 23:58:59 GMT+0800",
+    "author": {
+        "@type": "Person",
+        "name": "Saoki",
+        "image": {
+            "@type": "ImageObject",
+            "url": "/img/avatar.png"
+        },
+        "description": "Hi, nice to meet you"
+    },
+    "publisher": {
+        "@type": "Organization",
+        "name": "Saoki&#39;s Blog",
+        "logo": {
+            "@type":"ImageObject",
+            "url": "/img/favicon.png"
+        }
+    },
+    "keywords": ",题解",
+    "description": "",
+}
+</script>
 
 
     
@@ -289,6 +322,39 @@
 
                     <!-- Post TOC -->
 
+    
+    <!-- Back Button -->
+    <!--
+    <div class="material-back" id="backhome-div" tabindex="0">
+        <a class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon"
+           href="#" onclick="window.history.back();return false;"
+           target="_self"
+           role="button"
+           data-upgraded=",MaterialButton,MaterialRipple">
+            <i class="material-icons" role="presentation">arrow_back</i>
+            <span class="mdl-button__ripple-container">
+                <span class="mdl-ripple"></span>
+            </span>
+        </a>
+    </div>
+    -->
+
+
+    <!-- Left aligned menu below button -->
+    
+    
+    <button id="post-toc-trigger-btn"
+        class="mdl-button mdl-js-button mdl-button--icon">
+        <i class="material-icons">format_list_numbered</i>
+    </button>
+
+    <ul class="post-toc-wrap mdl-menu mdl-menu--bottom-left mdl-js-menu mdl-js-ripple-effect" for="post-toc-trigger-btn" style="max-height:80vh; overflow-y:scroll;">
+        <ol class="post-toc"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#题目描述"><span class="post-toc-number">1.</span> <span class="post-toc-text">题目描述</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#输入格式："><span class="post-toc-number">2.</span> <span class="post-toc-text">输入格式：</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#共两行。"><span class="post-toc-number">2.1.</span> <span class="post-toc-text">共两行。</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#输入样例-1："><span class="post-toc-number">2.2.</span> <span class="post-toc-text">输入样例#1：</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#输出样例-1："><span class="post-toc-number">2.3.</span> <span class="post-toc-text">输出样例#1：</span></a></li></ol></li></ol></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#代码"><span class="post-toc-number"></span> <span class="post-toc-text">代码</span></a>
+    </ul>
+    
+
+
+
 
 <!-- Layouts -->
 
@@ -315,7 +381,7 @@
         
     
             <p class="article-headline-p">
-                categories
+                洛谷 P1056 排座椅
             </p>
         </div>
 
@@ -334,7 +400,7 @@
     <!-- Author Name & Date -->
     <div>
         <strong>Saoki</strong>
-        <span>9月 23, 2019</span>
+        <span>2月 22, 2019</span>
     </div>
 
     <div class="section-spacer"></div>
@@ -352,6 +418,15 @@
 
     <!-- Tags (bookmark) -->
     
+    <button id="article-functions-viewtags-button" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon">
+        <i class="material-icons" role="presentation">bookmark</i>
+        <span class="visuallyhidden">bookmark</span>
+    </button>
+    <ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="article-functions-viewtags-button">
+        <li class="mdl-menu__item">
+        <a class="post_tag-link" href="/tags/题解/">题解</a>
+    </ul>
+    
 
     <!-- Share -->
     
@@ -366,7 +441,7 @@
 
     <!-- Share Weibo -->
     
-        <a class="post_share-link" href="http://service.weibo.com/share/share.php?appkey=&title=categories&url=https://chensaoki.github.io/categories/index.html&pic=https://chensaoki.github.io/img/favicon.png&searchPic=false&style=simple" target="_blank">
+        <a class="post_share-link" href="http://service.weibo.com/share/share.php?appkey=&title=洛谷 P1056 排座椅&url=https://chensaoki.github.io/2019/02/22/洛谷-P1056-排座椅/index.html&pic=https://chensaoki.github.io/img/favicon.png&searchPic=false&style=simple" target="_blank">
             <li class="mdl-menu__item">
                 分享到微博
             </li>
@@ -375,7 +450,7 @@
 
     <!-- Share Twitter -->
     
-        <a class="post_share-link" href="https://twitter.com/intent/tweet?text=categories&url=https://chensaoki.github.io/categories/index.html&via=Saoki" target="_blank">
+        <a class="post_share-link" href="https://twitter.com/intent/tweet?text=洛谷 P1056 排座椅&url=https://chensaoki.github.io/2019/02/22/洛谷-P1056-排座椅/index.html&via=Saoki" target="_blank">
             <li class="mdl-menu__item">
                 分享到 Twitter
             </li>
@@ -384,7 +459,7 @@
 
     <!-- Share Facebook -->
     
-        <a class="post_share-link" href="https://www.facebook.com/sharer/sharer.php?u=https://chensaoki.github.io/categories/index.html" target="_blank">
+        <a class="post_share-link" href="https://www.facebook.com/sharer/sharer.php?u=https://chensaoki.github.io/2019/02/22/洛谷-P1056-排座椅/index.html" target="_blank">
             <li class="mdl-menu__item">
                 分享到 Facebook
             </li>
@@ -393,7 +468,7 @@
 
     <!-- Share Google+ -->
     
-        <a class="post_share-link" href="https://plus.google.com/share?url=https://chensaoki.github.io/categories/index.html" target="_blank">
+        <a class="post_share-link" href="https://plus.google.com/share?url=https://chensaoki.github.io/2019/02/22/洛谷-P1056-排座椅/index.html" target="_blank">
             <li class="mdl-menu__item">
                 分享到 Google+
             </li>
@@ -418,7 +493,73 @@
                 <!-- Post Content -->
                 <div id="post-content" class="mdl-color-text--grey-700 mdl-card__supporting-text fade out">
     
-        
+        <h2 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a>题目描述</h2><p>上课的时候总会有一些同学和前后左右的人交头接耳，这是令小学班主任十分头疼的一件事情。不过，班主任小雪发现了一些有趣的现象，当同学们的座次确定下来之后，只有有限的D对同学上课时会交头接耳。</p>
+<p>同学们在教室中坐成了 MM 行 NN 列，坐在第i行第j列的同学的位置是 (i,j)(i,j) ，为了方便同学们进出，在教室中设置了 KK 条横向的通道， LL 条纵向的通道。</p>
+<p>于是，聪明的小雪想到了一个办法，或许可以减少上课时学生交头接耳的问题：她打算重新摆放桌椅，改变同学们桌椅间通道的位置，因为如果一条通道隔开了 22 个会交头接耳的同学，那么他们就不会交头接耳了。</p>
+<p>请你帮忙给小雪编写一个程序，给出最好的通道划分方案。在该方案下，上课时交头接耳的学生的对数最少。</p>
+<hr>
+<h2 id="输入格式："><a href="#输入格式：" class="headerlink" title="输入格式："></a>输入格式：</h2><pre><code>第一行，有 55 个用空格隔开的整数，分别是 M,N,K,L,D(2 \le N,M \le 1000,0 \le K&lt;M,0 \le L&lt;N,D \le 2000)M,N,K,L,D(2≤N,M≤1000,0≤K&lt;M,0≤L&lt;N,D≤2000)
+接下来的 DD 行，每行有 44 个用空格隔开的整数。第 ii 行的 44 个整数 X_i,Y_i,P_i,Q_iXi​,Yi​,Pi​,Qi​ ，表示坐在位置 (X_i,Y_i)(Xi​,Yi​) 与 (P_i,Q_i)(Pi​,Qi​) 的两个同学会交头接耳（输入保证他们前后相邻或者左右相邻）。
+输入数据保证最优方案的唯一性。</code></pre><br>
+## 输出格式：
+
+<h3 id="共两行。"><a href="#共两行。" class="headerlink" title="共两行。"></a>共两行。</h3><pre><code>第一行包含 KK 个整数 a_1,a_2,…,a_Ka1​,a2​,…,aK​ ，表示第 a_1a1​ 行和 a_1+1a1​+1 行之间、第 a-2a−2 行和 a_2+1a2​+1 行之间、…、第 a_KaK​ 行和第 a_K+1aK​+1 行之间要开辟通道，其中 a_i&lt; a_i+1ai​&lt;ai​+1 ，每两个整数之间用空格隔开（行尾没有空格）。
+第二行包含 LL 个整数 b_1,b_2,…,b_Lb1​,b2​,…,bL​ ，表示第 b_1b1​ 列和 b_1+1b1​+1 列之间、第 b_2b2​ 列和 b_2+1b2​+1 列之间、…、第 b_LbL​ 列和第 b_L+1bL​+1 列之间要开辟通道，其中 b_i&lt; b_i+1bi​&lt;bi​+1 ，每两个整数之间用空格隔开（列尾没有空格）。</code></pre><hr>
+<h3 id="输入样例-1："><a href="#输入样例-1：" class="headerlink" title="输入样例#1："></a>输入样例#1：</h3><pre><code>4 5 1 2 3
+4 2 4 3
+2 3 3 3
+2 5 2 4</code></pre><h3 id="输出样例-1："><a href="#输出样例-1：" class="headerlink" title="输出样例#1："></a>输出样例#1：</h3><pre><code>2
+2 4</code></pre><br>
+***
+## 思路：用结构体记录每行每列都可以分隔多少组同学，排序取分隔最多的就是最优解
+
+<hr>
+<h1 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h1><pre><code class="c#">#include &lt;iostream&gt;
+#include &lt;algorithm&gt;
+using namespace std;
+typedef struct node{
+    int index;                        //记录行或列的序号 
+    int v=0;                        //记录行或列可以分隔组数 
+};
+int cmp1(node a,node b)
+{
+    return a.v&gt;b.v?1:0;
+}
+int cmp2(node a,node b)
+{
+    return a.index&lt;b.index?1:0;
+}
+int main()
+{
+    int m,n,k,l,d,x,y,p,q;cin&gt;&gt;m&gt;&gt;n&gt;&gt;k&gt;&gt;l&gt;&gt;d;
+    node hang[m+10],lie[n+10];
+    for(int i=0;i&lt;=m;i++)hang[i].index=i;                //初始化行列序号 
+    for(int i=0;i&lt;=n;i++)lie[i].index=i;
+    for(int i=0;i&lt;d;i++)
+    {
+        cin&gt;&gt;x&gt;&gt;y&gt;&gt;p&gt;&gt;q;
+        if(y==q) x&gt;p?hang[p].v++:hang[x].v++;            //记录数据可以被那一行或列分隔 
+        else y&gt;q?lie[q].v++:lie[y].v++;
+    }
+    sort(hang+1,hang+m,cmp1);                //降序排序，取得最优解 
+    sort(lie+1,lie+n,cmp1);
+    sort(hang+1,hang+k+1,cmp2);                //因为要按升序输出，所以要对序号进行排序 
+    sort(lie+1,lie+l+1,cmp2);
+    for(int i=1;i&lt;=k;i++)
+    {
+        cout&lt;&lt;hang[i].index;
+        if(i!=k)cout&lt;&lt;&quot; &quot;;
+    }
+    cout&lt;&lt;endl;
+    for(int i=1;i&lt;=l;i++)
+    {
+        cout&lt;&lt;lie[i].index;
+        if(i!=l)cout&lt;&lt;&quot; &quot;;
+    }
+    cout&lt;&lt;endl;
+    return 0;
+}</code></pre>
+
         
     
 
@@ -438,11 +579,27 @@
             <nav class="material-nav mdl-color-text--grey-50 mdl-cell mdl-cell--12-col">
     <!-- Prev Nav -->
     
+        <a href="/2019/09/23/这是一篇测试文章/" id="post_nav-newer" class="prev-content">
+            <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon mdl-color--white mdl-color-text--grey-900" role="presentation">
+                <i class="material-icons">arrow_back</i>
+            </button>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            新篇
+        </a>
+    
 
     <!-- Section Spacer -->
     <div class="section-spacer"></div>
 
     <!-- Next Nav -->
+    
+        <a href="/2019/02/19/L2-022-重排链表-（25-分）天梯/" id="post_nav-older" class="next-content">
+            旧篇
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon mdl-color--white mdl-color-text--grey-900" role="presentation">
+                <i class="material-icons">arrow_forward</i>
+            </button>
+        </a>
     
 </nav>
 
@@ -604,6 +761,14 @@ It will not impact the appearance and can give developers a lot of support :)
 </aside>
 
                     
+
+                    
+                        <!-- Footer Top Button -->
+                        <div id="back-to-top" class="toTop-wrap">
+    <a href="#top" class="toTop">
+        <i class="material-icons footer_top-i">expand_less</i>
+    </a>
+</div>
 
                     
 

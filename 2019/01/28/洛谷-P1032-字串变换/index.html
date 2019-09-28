@@ -46,7 +46,7 @@
     
     <title>
         
-            categories | 
+            洛谷 P1032 字串变换 | 
         
         Saoki&#39;s Blog
     </title>
@@ -57,7 +57,7 @@
 
     <meta name="format-detection" content="telephone=no">
     <meta name="description" itemprop="description" content>
-    <meta name="keywords" content>
+    <meta name="keywords" content=",题解">
     <meta name="theme-color" content="#0097A7">
 
     <!-- Disable Fucking Bloody Baidu Tranformation -->
@@ -218,7 +218,7 @@
     <!-- WebAPP Icons -->
     <meta name="mobile-web-app-capable" content="yes">
     <meta name="application-name" content="Saoki&#39;s Blog">
-    <meta name="msapplication-starturl" content="https://chensaoki.github.io/categories/">
+    <meta name="msapplication-starturl" content="https://chensaoki.github.io/2019/01/28/洛谷-P1032-字串变换/">
     <meta name="msapplication-navbutton-color" content="#0097A7">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-title" content="Saoki&#39;s Blog">
@@ -233,13 +233,16 @@
     
 
     <!-- The Open Graph protocol -->
-    <meta property="og:url" content="https://chensaoki.github.io/categories/">
+    <meta property="og:url" content="https://chensaoki.github.io/2019/01/28/洛谷-P1032-字串变换/">
     <meta property="og:type" content="blog">
-    <meta property="og:title" content="categories | Saoki&#39;s Blog">
+    <meta property="og:title" content="洛谷 P1032 字串变换 | Saoki&#39;s Blog">
     <meta property="og:image" content="/img/favicon.png">
     <meta property="og:description" content>
-    
+    <meta property="og:article:tag" content="题解"> 
 
+    
+        <meta property="article:published_time" content="Mon Jan 28 2019 23:45:25 GMT+0800">
+        <meta property="article:modified_time" content="Sat Sep 28 2019 23:54:08 GMT+0800">
     
 
     <!-- The Twitter Card protocol -->
@@ -247,13 +250,43 @@
 
     <!-- Add canonical link for SEO -->
     
-        <link rel="canonical" href="https://chensaoki.github.io/categories/index.html">
+        <link rel="canonical" href="https://chensaoki.github.io/2019/01/28/洛谷-P1032-字串变换/index.html">
     
 
     <!-- Structured-data for SEO -->
     
         
 
+
+<script type="application/ld+json">
+{
+    "@context": "https://schema.org",
+    "@type": "BlogPosting",
+    "mainEntityOfPage": "https://chensaoki.github.io/2019/01/28/洛谷-P1032-字串变换/index.html",
+    "headline": "洛谷 P1032 字串变换",
+    "datePublished": "Mon Jan 28 2019 23:45:25 GMT+0800",
+    "dateModified": "Sat Sep 28 2019 23:54:08 GMT+0800",
+    "author": {
+        "@type": "Person",
+        "name": "Saoki",
+        "image": {
+            "@type": "ImageObject",
+            "url": "/img/avatar.png"
+        },
+        "description": "Hi, nice to meet you"
+    },
+    "publisher": {
+        "@type": "Organization",
+        "name": "Saoki&#39;s Blog",
+        "logo": {
+            "@type":"ImageObject",
+            "url": "/img/favicon.png"
+        }
+    },
+    "keywords": ",题解",
+    "description": "",
+}
+</script>
 
 
     
@@ -289,6 +322,39 @@
 
                     <!-- Post TOC -->
 
+    
+    <!-- Back Button -->
+    <!--
+    <div class="material-back" id="backhome-div" tabindex="0">
+        <a class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon"
+           href="#" onclick="window.history.back();return false;"
+           target="_self"
+           role="button"
+           data-upgraded=",MaterialButton,MaterialRipple">
+            <i class="material-icons" role="presentation">arrow_back</i>
+            <span class="mdl-button__ripple-container">
+                <span class="mdl-ripple"></span>
+            </span>
+        </a>
+    </div>
+    -->
+
+
+    <!-- Left aligned menu below button -->
+    
+    
+    <button id="post-toc-trigger-btn"
+        class="mdl-button mdl-js-button mdl-button--icon">
+        <i class="material-icons">format_list_numbered</i>
+    </button>
+
+    <ul class="post-toc-wrap mdl-menu mdl-menu--bottom-left mdl-js-menu mdl-js-ripple-effect" for="post-toc-trigger-btn" style="max-height:80vh; overflow-y:scroll;">
+        <ol class="post-toc"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#题目描述"><span class="post-toc-number">1.</span> <span class="post-toc-text">题目描述</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#输入格式："><span class="post-toc-number">2.</span> <span class="post-toc-text">输入格式：</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#输出格式："><span class="post-toc-number">3.</span> <span class="post-toc-text">输出格式：</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#若在1010步（包含1010步）以内能将AA变换为BB，则输出最少的变换步数；否则输出”NO-ANSWER-”"><span class="post-toc-number">3.1.</span> <span class="post-toc-text">若在1010步（包含1010步）以内能将AA变换为BB，则输出最少的变换步数；否则输出”NO ANSWER!”</span></a></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#输入输出样例"><span class="post-toc-number">4.</span> <span class="post-toc-text">输入输出样例</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#输入样例-1："><span class="post-toc-number">4.1.</span> <span class="post-toc-text">输入样例#1：</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#输出样例-1："><span class="post-toc-number">4.2.</span> <span class="post-toc-text">输出样例#1：</span></a></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#思路："><span class="post-toc-number">5.</span> <span class="post-toc-text">思路：</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#代码"><span class="post-toc-number">6.</span> <span class="post-toc-text">代码</span></a></li></ol>
+    </ul>
+    
+
+
+
 
 <!-- Layouts -->
 
@@ -315,7 +381,7 @@
         
     
             <p class="article-headline-p">
-                categories
+                洛谷 P1032 字串变换
             </p>
         </div>
 
@@ -334,7 +400,7 @@
     <!-- Author Name & Date -->
     <div>
         <strong>Saoki</strong>
-        <span>9月 23, 2019</span>
+        <span>1月 28, 2019</span>
     </div>
 
     <div class="section-spacer"></div>
@@ -352,6 +418,15 @@
 
     <!-- Tags (bookmark) -->
     
+    <button id="article-functions-viewtags-button" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon">
+        <i class="material-icons" role="presentation">bookmark</i>
+        <span class="visuallyhidden">bookmark</span>
+    </button>
+    <ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="article-functions-viewtags-button">
+        <li class="mdl-menu__item">
+        <a class="post_tag-link" href="/tags/题解/">题解</a>
+    </ul>
+    
 
     <!-- Share -->
     
@@ -366,7 +441,7 @@
 
     <!-- Share Weibo -->
     
-        <a class="post_share-link" href="http://service.weibo.com/share/share.php?appkey=&title=categories&url=https://chensaoki.github.io/categories/index.html&pic=https://chensaoki.github.io/img/favicon.png&searchPic=false&style=simple" target="_blank">
+        <a class="post_share-link" href="http://service.weibo.com/share/share.php?appkey=&title=洛谷 P1032 字串变换&url=https://chensaoki.github.io/2019/01/28/洛谷-P1032-字串变换/index.html&pic=https://chensaoki.github.io/img/favicon.png&searchPic=false&style=simple" target="_blank">
             <li class="mdl-menu__item">
                 分享到微博
             </li>
@@ -375,7 +450,7 @@
 
     <!-- Share Twitter -->
     
-        <a class="post_share-link" href="https://twitter.com/intent/tweet?text=categories&url=https://chensaoki.github.io/categories/index.html&via=Saoki" target="_blank">
+        <a class="post_share-link" href="https://twitter.com/intent/tweet?text=洛谷 P1032 字串变换&url=https://chensaoki.github.io/2019/01/28/洛谷-P1032-字串变换/index.html&via=Saoki" target="_blank">
             <li class="mdl-menu__item">
                 分享到 Twitter
             </li>
@@ -384,7 +459,7 @@
 
     <!-- Share Facebook -->
     
-        <a class="post_share-link" href="https://www.facebook.com/sharer/sharer.php?u=https://chensaoki.github.io/categories/index.html" target="_blank">
+        <a class="post_share-link" href="https://www.facebook.com/sharer/sharer.php?u=https://chensaoki.github.io/2019/01/28/洛谷-P1032-字串变换/index.html" target="_blank">
             <li class="mdl-menu__item">
                 分享到 Facebook
             </li>
@@ -393,7 +468,7 @@
 
     <!-- Share Google+ -->
     
-        <a class="post_share-link" href="https://plus.google.com/share?url=https://chensaoki.github.io/categories/index.html" target="_blank">
+        <a class="post_share-link" href="https://plus.google.com/share?url=https://chensaoki.github.io/2019/01/28/洛谷-P1032-字串变换/index.html" target="_blank">
             <li class="mdl-menu__item">
                 分享到 Google+
             </li>
@@ -418,7 +493,112 @@
                 <!-- Post Content -->
                 <div id="post-content" class="mdl-color-text--grey-700 mdl-card__supporting-text fade out">
     
-        
+        <h2 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a>题目描述</h2><p>已知有两个字串A,BA,B及一组字串变换的规则（至多66个规则）:</p>
+<p>A_1A1​ -&gt;B_1B1​</p>
+<p>A_2A2​ -&gt; B_2B2​</p>
+<p>规则的含义为：在 AA中的子串 A_1A1​ 可以变换为B_1B1​，A_2A2​ 可以变换为 B_2B2​ …。</p>
+<p>例如：AA=’abcdabcd’BB＝’xyzxyz’</p>
+<p>变换规则为：</p>
+<p>‘abcabc’-&gt;‘xuxu’‘udud’-&gt;‘yy’‘yy’-&gt;‘yzyz’</p>
+<p>则此时，AA可以经过一系列的变换变为BB，其变换的过程为：</p>
+<p>‘abcdabcd’-&gt;‘xudxud’-&gt;‘xyxy’-&gt;‘xyzxyz’</p>
+<p>共进行了33次变换，使得AA变换为BB。</p>
+<hr>
+<h2 id="输入格式："><a href="#输入格式：" class="headerlink" title="输入格式："></a>输入格式：</h2><pre><code>AA BB
+A_1A1​ B_1B1​
+A_2A2​ B_2B2​ |-&gt; 变换规则
+... ... /
+所有字符串长度的上限为2020。</code></pre><hr>
+<h2 id="输出格式："><a href="#输出格式：" class="headerlink" title="输出格式："></a>输出格式：</h2><h3 id="若在1010步（包含1010步）以内能将AA变换为BB，则输出最少的变换步数；否则输出”NO-ANSWER-”"><a href="#若在1010步（包含1010步）以内能将AA变换为BB，则输出最少的变换步数；否则输出”NO-ANSWER-”" class="headerlink" title="若在1010步（包含1010步）以内能将AA变换为BB，则输出最少的变换步数；否则输出”NO ANSWER!”"></a>若在1010步（包含1010步）以内能将AA变换为BB，则输出最少的变换步数；否则输出”NO ANSWER!”</h3><h2 id="输入输出样例"><a href="#输入输出样例" class="headerlink" title="输入输出样例"></a>输入输出样例</h2><h3 id="输入样例-1："><a href="#输入样例-1：" class="headerlink" title="输入样例#1："></a>输入样例#1：</h3><pre><code>abcd xyz
+abc xu
+ud y
+y yz</code></pre><h3 id="输出样例-1："><a href="#输出样例-1：" class="headerlink" title="输出样例#1："></a>输出样例#1：</h3><pre><code>3</code></pre><hr>
+<h2 id="思路："><a href="#思路：" class="headerlink" title="思路："></a>思路：</h2><p>###直接用广度优先搜索(BFS)来做，加上用set来判重，具体看代码</p>
+<hr>
+<h2 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h2><pre><code class="c#">#include &lt;iostream&gt;
+#include &lt;set&gt;
+#include &lt;queue&gt;
+#include &lt;cstring&gt;
+using namespace std;
+string a,b,s[10],e[10]; 
+int x=1,p=1;//x:记录变化规则数量  p:特判 
+struct node{
+    string a;//字符串 
+    int sum;//已经变化次数 
+};
+queue&lt;node&gt; que;
+set&lt;string&gt; mark;//用来判重，否则会TLE在第3点和第5点
+void bfs()//重点
+{
+    if(a==b)
+    {
+        cout&lt;&lt;&quot;0&quot;&lt;&lt;endl;
+        return;
+    }
+    node t={a,0};
+    que.push(t);
+    mark.insert(a);
+    while(!que.empty())
+    {
+        node front=que.front();
+        que.pop();
+        if(front.sum&gt;20)
+        {
+            cout&lt;&lt;&quot;NO ANSWER!&quot;&lt;&lt;endl;
+            p=0;
+            return;
+        }
+        for(int i=1;i&lt;=x;i++)
+        {    
+            int v=0;
+            //找出所有符合字符串入队 
+            while(1)                            
+            {
+                //找出符合条件的位置 
+                v=front.a.find(s[i],v);
+                //判断是否找到符合的条件 string::npos==-1 
+                if(v!=string::npos)
+                {
+                    //合并新串 
+                    string newstr=front.a.substr(0,v)+e[i]+front.a.substr(v+strlen(s[i].c_str()));
+                    //根据题目字符串最长20 
+                    if(strlen(newstr.c_str())&gt;20){v++;continue;}
+                    //相等直接输出结果 
+                    if(newstr==b)
+                    {
+                        cout&lt;&lt;front.sum+1&lt;&lt;endl;
+                        p=0;
+                        return;
+                    }
+                    //判重，重复的串不再入队 
+                    if(mark.find(newstr)==mark.end())
+                    {
+                        mark.insert(newstr);
+                        node newnode={newstr,front.sum+1};
+                        que.push(newnode);
+                    }
+                    //从下一个位置开始找 
+                    v++;
+                }
+                else
+                {
+                    break;
+                }
+            }
+        }
+    }
+    //还有一种情况：变化次数少于20且没有正确答案
+    if(p)cout&lt;&lt;&quot;NO ANSWER!&quot;&lt;&lt;endl;
+    return;
+}
+int main()
+{
+    cin&gt;&gt;a&gt;&gt;b;
+    while(cin&gt;&gt;s[x]&gt;&gt;e[x])x++;
+    bfs();
+    return 0;
+}</code></pre>
+
         
     
 
@@ -437,6 +617,14 @@
             <!-- Post Prev & Next Nav -->
             <nav class="material-nav mdl-color-text--grey-50 mdl-cell mdl-cell--12-col">
     <!-- Prev Nav -->
+    
+        <a href="/2019/02/19/L2-022-重排链表-（25-分）天梯/" id="post_nav-newer" class="prev-content">
+            <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon mdl-color--white mdl-color-text--grey-900" role="presentation">
+                <i class="material-icons">arrow_back</i>
+            </button>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            新篇
+        </a>
     
 
     <!-- Section Spacer -->
@@ -604,6 +792,14 @@ It will not impact the appearance and can give developers a lot of support :)
 </aside>
 
                     
+
+                    
+                        <!-- Footer Top Button -->
+                        <div id="back-to-top" class="toTop-wrap">
+    <a href="#top" class="toTop">
+        <i class="material-icons footer_top-i">expand_less</i>
+    </a>
+</div>
 
                     
 
