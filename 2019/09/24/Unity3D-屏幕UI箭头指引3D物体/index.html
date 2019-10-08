@@ -242,7 +242,7 @@
 
     
         <meta property="article:published_time" content="Tue Sep 24 2019 17:45:06 GMT+0800">
-        <meta property="article:modified_time" content="Wed Sep 25 2019 14:03:11 GMT+0800">
+        <meta property="article:modified_time" content="Tue Oct 08 2019 22:40:57 GMT+0800">
     
 
     <!-- The Twitter Card protocol -->
@@ -265,7 +265,7 @@
     "mainEntityOfPage": "https://chensaoki.github.io/2019/09/24/Unity3D-屏幕UI箭头指引3D物体/index.html",
     "headline": "Unity3D-屏幕UI箭头指引3D物体",
     "datePublished": "Tue Sep 24 2019 17:45:06 GMT+0800",
-    "dateModified": "Wed Sep 25 2019 14:03:11 GMT+0800",
+    "dateModified": "Tue Oct 08 2019 22:40:57 GMT+0800",
     "author": {
         "@type": "Person",
         "name": "Saoki",
@@ -349,7 +349,7 @@
     </button>
 
     <ul class="post-toc-wrap mdl-menu mdl-menu--bottom-left mdl-js-menu mdl-js-ripple-effect" for="post-toc-trigger-btn" style="max-height:80vh; overflow-y:scroll;">
-        <ol class="post-toc"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#我们最终要实现是效果是根据cube在不同位置，箭头有不同的指引效果"><span class="post-toc-number">1.</span> <span class="post-toc-text">我们最终要实现是效果是根据cube在不同位置，箭头有不同的指引效果</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#实现箭头指引，如果是3D物体我们可以直接用transform-LookAt-。因为箭头是UI在屏幕上，Transform-LookAt-是使Z轴看向目标，而2D基本是由X和Y轴构成的。所以在2D中，没办法直接使用这个函数。因此，我们需要实现一个2D的LookAt-函数"><span class="post-toc-number">1.1.</span> <span class="post-toc-text">实现箭头指引，如果是3D物体我们可以直接用transform.LookAt()。因为箭头是UI在屏幕上，Transform.LookAt()是使Z轴看向目标，而2D基本是由X和Y轴构成的。所以在2D中，没办法直接使用这个函数。因此，我们需要实现一个2D的LookAt()函数</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#实现箭头指引后，我们还需要确定箭头应该摆在上面位置，在不同区域，有不同的摆放位置，我们先区分出不同的区域。cam-WorldToViewportPoint-函数可以得到3D物体在屏幕中的比例位置，返回值是0-1之间就是在屏幕内，反之在屏幕外。"><span class="post-toc-number">1.2.</span> <span class="post-toc-text">实现箭头指引后，我们还需要确定箭头应该摆在上面位置，在不同区域，有不同的摆放位置，我们先区分出不同的区域。cam.WorldToViewportPoint()函数可以得到3D物体在屏幕中的比例位置，返回值是0-1之间就是在屏幕内，反之在屏幕外。</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#确定区域后，在根据不同的区域进行不同的处理，这里看下面完整的代码"><span class="post-toc-number">1.3.</span> <span class="post-toc-text">确定区域后，在根据不同的区域进行不同的处理，这里看下面完整的代码</span></a></li></ol></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#完整代码-1"><span class="post-toc-number"></span> <span class="post-toc-text">完整代码^1</span></a>
+        <ol class="post-toc"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#我们最终要实现是效果是根据cube在不同位置，箭头有不同的指引效果"><span class="post-toc-number">1.</span> <span class="post-toc-text">我们最终要实现是效果是根据cube在不同位置，箭头有不同的指引效果</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#实现箭头指引，如果是3D物体我们可以直接用transform-LookAt-。因为箭头是UI在屏幕上，Transform-LookAt-是使Z轴看向目标，而2D基本是由X和Y轴构成的。所以在2D中，没办法直接使用这个函数。因此，我们需要实现一个2D的LookAt-函数"><span class="post-toc-number">1.1.</span> <span class="post-toc-text">实现箭头指引，如果是3D物体我们可以直接用transform.LookAt()。因为箭头是UI在屏幕上，Transform.LookAt()是使Z轴看向目标，而2D基本是由X和Y轴构成的。所以在2D中，没办法直接使用这个函数。因此，我们需要实现一个2D的LookAt()函数</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#实现箭头指引后，我们还需要确定箭头应该摆在上面位置，在不同区域，有不同的摆放位置，我们先区分出不同的区域。cam-WorldToViewportPoint-函数可以得到3D物体在屏幕中的比例位置，返回值是0-1之间就是在屏幕内，反之在屏幕外。"><span class="post-toc-number">1.2.</span> <span class="post-toc-text">实现箭头指引后，我们还需要确定箭头应该摆在上面位置，在不同区域，有不同的摆放位置，我们先区分出不同的区域。cam.WorldToViewportPoint()函数可以得到3D物体在屏幕中的比例位置，返回值是0-1之间就是在屏幕内，反之在屏幕外。</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#确定区域后，在根据不同的区域进行不同的处理，这里看下面完整的代码"><span class="post-toc-number">1.3.</span> <span class="post-toc-text">确定区域后，在根据不同的区域进行不同的处理，这里看下面完整的代码</span></a></li></ol></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#完整代码-挂到箭头上-1"><span class="post-toc-number"></span> <span class="post-toc-text">完整代码-挂到箭头上^1</span></a>
     </ul>
     
 
@@ -510,18 +510,19 @@
         //返回值是在x轴和一个二维向量开始于0个结束在(x,y)处之间的角。
         float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
         //计算角度返回                                                                    
-        return Quaternion.AngleAxis(angle, Vector3.forward);</code></pre>
+        return Quaternion.AngleAxis(angle, Vector3.forward);
+    }</code></pre>
 <hr>
 <h4 id="实现箭头指引后，我们还需要确定箭头应该摆在上面位置，在不同区域，有不同的摆放位置，我们先区分出不同的区域。cam-WorldToViewportPoint-函数可以得到3D物体在屏幕中的比例位置，返回值是0-1之间就是在屏幕内，反之在屏幕外。"><a href="#实现箭头指引后，我们还需要确定箭头应该摆在上面位置，在不同区域，有不同的摆放位置，我们先区分出不同的区域。cam-WorldToViewportPoint-函数可以得到3D物体在屏幕中的比例位置，返回值是0-1之间就是在屏幕内，反之在屏幕外。" class="headerlink" title="实现箭头指引后，我们还需要确定箭头应该摆在上面位置，在不同区域，有不同的摆放位置，我们先区分出不同的区域。cam.WorldToViewportPoint()函数可以得到3D物体在屏幕中的比例位置，返回值是0-1之间就是在屏幕内，反之在屏幕外。"></a>实现箭头指引后，我们还需要确定箭头应该摆在上面位置，在不同区域，有不同的摆放位置，我们先区分出不同的区域。<code>cam.WorldToViewportPoint()</code>函数可以得到3D物体在屏幕中的比例位置，返回值是0-1之间就是在屏幕内，反之在屏幕外。</h4><pre><code class="C#">private void getZone() //得到cube在屏幕的那一区域
     {
         //得到cube在屏幕坐标中的比例坐标 范围是 0-1；
         TargerPosition = Camera.main.WorldToViewportPoint(targer.transform.position);   
-        if (TargerPosition.x &gt;= 0.2 &amp;&amp; TargerPosition.x &lt;= 0.8 &amp;&amp; TargerPosition.y &gt;= 0.2 &amp;&amp; TargerPosition.y &lt;= 0.8) zone = 1; //在中间
+//      if (TargerPosition.x &gt;= 0.2 &amp;&amp; TargerPosition.x &lt;= 0.8 &amp;&amp; TargerPosition.y &gt;= 0.2 &amp;&amp; TargerPosition.y &lt;= 0.8) zone = 1; //在中间
         else if (TargerPosition.x &lt; 0 || TargerPosition.x &gt; 1 || TargerPosition.y &lt; 0 || TargerPosition.y &gt; 1) zone = 3; //在屏幕外
         else zone = 2;  // 在四周
     }</code></pre>
 <h4 id="确定区域后，在根据不同的区域进行不同的处理，这里看下面完整的代码"><a href="#确定区域后，在根据不同的区域进行不同的处理，这里看下面完整的代码" class="headerlink" title="确定区域后，在根据不同的区域进行不同的处理，这里看下面完整的代码"></a>确定区域后，在根据不同的区域进行不同的处理，这里看下面完整的代码</h4><hr>
-<h2 id="完整代码-1"><a href="#完整代码-1" class="headerlink" title="完整代码^1"></a>完整代码<a href="这里有一个bug，背对cube会指引错误，有时间改吧，限制不能转到后面小强天天开心应该就不会发现了。">^1</a></h2><pre><code class="C#">using System.Collections;
+<h2 id="完整代码-挂到箭头上-1"><a href="#完整代码-挂到箭头上-1" class="headerlink" title="完整代码-挂到箭头上^1"></a>完整代码-挂到箭头上<a href="这里有一个bug，背对cube会指引错误，有时间改吧，限制不能转到后面小强天天开心应该就不会发现了。">^1</a></h2><pre><code class="C#">using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
@@ -530,69 +531,62 @@ public class ArrowAt : MonoBehaviour
 {
 
     public Transform targer;
+    public GameObject selfChild; //子物体箭头，一直在旋转
     Vector3 TargerPosition;
     int zone = 1;
+    // Use this for initialization
     void Start()
     {
         targer = GameObject.Find(&quot;Cube&quot;).transform;
+        selfChild = GameObject.Find(&quot;arrow (1)&quot;);
     }
 
+    // Update is called once per frame
     void Update()
     {
-
-        getZone();
-
-        if (zone == 1)
+        TargerPosition = Camera.main.WorldToViewportPoint(targer.transform.position);   //得到cube在屏幕坐标中的比例坐标 0-1；
+//      if (TargerPosition.x &gt;= 0.2 &amp;&amp; TargerPosition.x &lt;= 0.8 &amp;&amp; TargerPosition.y &gt;= 0.2 &amp;&amp; TargerPosition.y &lt;= 0.8) zone = 1; //在中间
+        else if (TargerPosition.x &lt; 0 || TargerPosition.x &gt; 1 || TargerPosition.y &lt; 0 || TargerPosition.y &gt; 1) zone = 3; //在屏幕外
+        else zone = 2;  // 在四周
+        if(zone==1)
         {
-            //得到cube在在屏幕的坐标
-            TargerPosition = Camera.main.WorldToScreenPoint(targer.transform.position);
-            //箭头设置成这个坐标的上面
-            this.transform.position = new Vector3(TargerPosition.x, TargerPosition.y + 100, 0f); 
+
+            GetComponent&lt;Image&gt;().enabled = false;
+            selfChild.GetComponent&lt;Image&gt;().enabled = true;
+            TargerPosition = Camera.main.WorldToScreenPoint(targer.transform.position); //得到cube在在屏幕的坐标
+            this.transform.position = new Vector3(TargerPosition.x, TargerPosition.y + 100, 0f); //箭头设置成这个坐标的上面
+
         }
         else if (zone == 2)
         {
-            int tmpx = 0, tmpy = 0;
-            //判断cube在屏幕的左右
-            if (TargerPosition.x &gt; 0.5) tmpx = -50; else tmpx = 50;
-            //判断cube在屏幕的上下
-            if (TargerPosition.y &gt; 0.5) tmpy = -50; else tmpy = 50;
-            //得到cube在在屏幕的坐标
-            TargerPosition = Camera.main.WorldToScreenPoint(targer.transform.position);
-            //箭头设置cube附近
-            this.transform.position = new Vector3(TargerPosition.x + tmpx, TargerPosition.y + tmpy, 0f);
+            GetComponent&lt;Image&gt;().enabled = true;
+            selfChild.GetComponent&lt;Image&gt;().enabled = false;
+            int tmpx=0,tmpy=0;
+            if (TargerPosition.x &gt; 0.5) tmpx = -50; else tmpx = 50;     //判断cube在屏幕的左右
+            if (TargerPosition.y &gt; 0.5) tmpy = -50; else tmpy = 50;     //判断cube在屏幕的上下
+            TargerPosition = Camera.main.WorldToScreenPoint(targer.transform.position);         //得到cube在在屏幕的坐标
+            this.transform.position = new Vector3(TargerPosition.x + tmpx, TargerPosition.y + tmpy, 0f);//箭头设置cube附近
         }
         else if (zone == 3)
         {
+            GetComponent&lt;Image&gt;().enabled = true;
+            selfChild.GetComponent&lt;Image&gt;().enabled = false;
             TargerPosition = Camera.main.WorldToScreenPoint(targer.transform.position);
-            //限制箭头不超出屏幕的左右
-            TargerPosition.x = Mathf.Clamp(TargerPosition.x, 50, Screen.width - 50);
-            //限制箭头不超出屏幕的上下
-            TargerPosition.y = Mathf.Clamp(TargerPosition.y, 50, Screen.height - 50);       
+            TargerPosition.x = Mathf.Clamp(TargerPosition.x, 50, Screen.width - 50);        //限制箭头不超出屏幕的左右
+            TargerPosition.y = Mathf.Clamp(TargerPosition.y, 50, Screen.height - 50);       //限制箭头不超出屏幕的上下
             this.transform.position = new Vector3(TargerPosition.x, TargerPosition.y, 0f);
         }
-        //取得世界坐标物体在屏幕上的投影坐标
-        Vector3 screenTarger = Camera.main.WorldToScreenPoint(targer.position);
-        //得到箭头的指向角度
-        transform.rotation = lookat2D(transform.position, screenTarger);        
-    }
 
-    private void getZone() //得到cube在屏幕的那一区域
-    {
-        //得到cube在屏幕坐标中的比例坐标 范围是 0-1；
-        TargerPosition = Camera.main.WorldToViewportPoint(targer.transform.position);   
-        if (TargerPosition.x &gt;= 0.2 &amp;&amp; TargerPosition.x &lt;= 0.8 &amp;&amp; TargerPosition.y &gt;= 0.2 &amp;&amp; TargerPosition.y &lt;= 0.8) zone = 1; //在中间
-        else if (TargerPosition.x &lt; 0 || TargerPosition.x &gt; 1 || TargerPosition.y &lt; 0 || TargerPosition.y &gt; 1) zone = 3; //在屏幕外
-        else zone = 2;  // 在四周
+        Vector3 screenTarger = Camera.main.WorldToScreenPoint(targer.position); //取得世界坐标物体在屏幕上的投影坐标
+        transform.rotation = lookat2D(transform.position, screenTarger);        //得到箭头的指向角度
     }
 
     private Quaternion lookat2D(Vector3 self,Vector3 Targer) //实现2dlookat
     {
         Vector2 direction = Targer - self;
-        //以弧度为单位计算并返回 y/x 的反正切值。返回值表示相对直角三角形对角的角，其中 x 是临边边长，而 y 是对边边长。
-        //返回值是在x轴和一个二维向量开始于0个结束在(x,y)处之间的角。
-        float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
-        //计算角度返回                                                                    
-        return Quaternion.AngleAxis(angle, Vector3.forward);                
+        float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;//以弧度为单位计算并返回 y/x 的反正切值。返回值表示相对直角三角形对角的角，其中 x 是临边边长，而 y 是对边边长。
+                                                                            //返回值是在x轴和一个二维向量开始于0个结束在(x,y)处之间的角。
+        return Quaternion.AngleAxis(angle, Vector3.forward);                //计算角度返回
     }
 }</code></pre>
 <br>
